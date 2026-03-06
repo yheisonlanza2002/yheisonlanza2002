@@ -1,3 +1,4 @@
+
 :root{
   --bg: #07070a;
   --panel: rgba(255, 255, 255, 0.06);
@@ -162,7 +163,7 @@ body{
     linear-gradient(180deg, rgba(7,7,10,0.45), rgba(7,7,10,0.95));
 }
 .heroTop__content{
-  padding-top: 90px; /* espacio para navbar */
+  padding-top: 90px;
 }
 
 /* HERO TEXTOS */
@@ -304,7 +305,6 @@ body{
 }
 .project h3{ margin:0; font-size: 16px; }
 .project p{ margin: 10px 0 10px; color: var(--muted); font-size: 14px; }
-
 .list{ margin: 0; padding-left: 18px; color: var(--muted); font-size: 14px; }
 .project__actions{ display:flex; align-items:center; justify-content:space-between; margin-top: 12px; gap: 10px; flex-wrap: wrap; }
 .link{ color: rgba(242,212,138,0.95); font-weight: 900; text-decoration: none; }
@@ -321,11 +321,6 @@ body{
   font-weight: 900;
   font-size: 12px;
   white-space: nowrap;
-}
-.pill--soft{
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,255,255,0.10);
-  color: rgba(255,255,255,0.72);
 }
 
 /* CONTACTO */
@@ -375,7 +370,7 @@ body{
 }
 .footer__sep{ opacity: .5; }
 
-/* === Carrusel infinito tipo "marquee" (limpio) === */
+/* === MARQUEE: horizontal real === */
 .marquee{
   position: relative;
   border-radius: var(--radius);
@@ -384,14 +379,12 @@ body{
   box-shadow: var(--shadow);
   overflow: hidden;
 }
-
 .marquee__viewport{
   position: relative;
   overflow: hidden;
   padding: 14px;
 }
-
-/* fades laterales (premium) */
+/* fades laterales */
 .marquee__viewport::before,
 .marquee__viewport::after{
   content:"";
@@ -399,7 +392,7 @@ body{
   top:0; bottom:0;
   width: 72px;
   z-index: 2;
-  pointer-events: none;
+  pointer-events:none;
 }
 .marquee__viewport::before{
   left:0;
@@ -409,26 +402,27 @@ body{
   right:0;
   background: linear-gradient(270deg, rgba(7,7,10,1), rgba(7,7,10,0));
 }
-
-/* Track horizontal */
 .marquee__track{
-  display: flex;
+  display:flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch;
   gap: 12px;
-  flex-wrap: nowrap;
-  width: max-content;
+  width: max-content !important;
   will-change: transform;
   transform: translate3d(0,0,0);
 }
 
-/* Cards del marquee */
+/* Cards dentro del marquee: SIEMPRE en horizontal */
 .mqCard{
-  flex: 0 0 auto;
-  width: min(360px, 82vw);
+  flex: 0 0 auto !important;
+  width: 320px;          /* fijo para que se vean una tras otra */
+  max-width: 82vw;       /* en pantallas pequeñas no se desborda */
 }
 
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce){
-  .marquee__track{ transform: none !important; }
+  .marquee__track{ transform:none !important; }
 }
 
 /* Responsive */
@@ -440,4 +434,4 @@ body{
   .nav__links a{ display:none; }
   .nav__links a.btn{ display:inline-flex; }
   .heroTop{ min-height: 560px; }
-  }
+}
