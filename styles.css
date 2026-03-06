@@ -165,7 +165,7 @@ body{
   padding-top: 90px; /* espacio para navbar */
 }
 
-/* HERO TEXTOS (estilo anterior) */
+/* HERO TEXTOS */
 .hero__badge{
   display:inline-flex;
   align-items:center;
@@ -242,6 +242,7 @@ body{
 .section__head h2{ margin:0; font-size: 26px; letter-spacing: .01em; }
 .section__head p{ margin:0; color: var(--muted); max-width: 86ch; }
 
+/* CARDS */
 .cards{
   display:grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -257,7 +258,14 @@ body{
 }
 .card h3{ margin: 0 0 8px; font-size: 16px; letter-spacing: .02em; }
 .card p{ margin: 0; color: var(--muted); font-size: 14px; }
+.card__meta{
+  margin-top: 10px;
+  color: rgba(255,255,255,0.62);
+  font-weight: 700;
+  font-size: 12px;
+}
 
+/* CHIPS */
 .chips{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 16px; }
 .chip{
   padding: 10px 12px;
@@ -367,90 +375,8 @@ body{
 }
 .footer__sep{ opacity: .5; }
 
-/* CARRUSEL INFINITO */
-.infinite{
-  position: relative;
-  border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.04);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-.infinite__viewport{
-  overflow: hidden;
-  padding: 16px 14px;
-}
-.infinite__track{
-  display:flex;
-  gap: 12px;
-  will-change: transform;
-}
-.infinite__fade{
-  position:absolute;
-  top:0; bottom:0;
-  width: 70px;
-  z-index: 2;
-  pointer-events:none;
-}
-.infinite__fade--l{
-  left:0;
-  background: linear-gradient(90deg, rgba(7,7,10,1), rgba(7,7,10,0));
-}
-.infinite__fade--r{
-  right:0;
-  background: linear-gradient(270deg, rgba(7,7,10,1), rgba(7,7,10,0));
-}
-
-.slideCard{
-  flex: 0 0 auto;
-  width: min(380px, 82vw);
-  padding: 16px;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.10);
-}
-.slideCard__top{
-  display:flex;
-  flex-wrap:wrap;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-.slideCard h3{
-  margin: 0 0 6px;
-  font-size: 16px;
-  letter-spacing: .01em;
-}
-.slideCard p{
-  margin: 0 0 10px;
-  color: rgba(255,255,255,0.72);
-  font-size: 14px;
-}
-.slideCard__meta{
-  color: rgba(255,255,255,0.62);
-  font-weight: 700;
-  font-size: 12px;
-}
-
-.infinite__controls{
-  display:flex;
-  gap: 10px;
-  padding: 12px 14px 14px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-.iconbtn{
-  width: 44px;
-  height: 38px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.06);
-  color: var(--text);
-  font-weight: 900;
-  font-size: 18px;
-}
-.iconbtn:active{ transform: translateY(1px); }
-
-/* Carrusel limpio (sin botones) */
-.cleanSlider{
+/* === Carrusel infinito tipo "marquee" (limpio) === */
+.marquee{
   position: relative;
   border-radius: var(--radius);
   border: 1px solid rgba(255,255,255,0.10);
@@ -459,15 +385,15 @@ body{
   overflow: hidden;
 }
 
-.cleanSlider__viewport{
+.marquee__viewport{
+  position: relative;
   overflow: hidden;
   padding: 14px;
-  position: relative;
 }
 
-/* fades laterales para que se vea premium */
-.cleanSlider__viewport::before,
-.cleanSlider__viewport::after{
+/* fades laterales (premium) */
+.marquee__viewport::before,
+.marquee__viewport::after{
   content:"";
   position:absolute;
   top:0; bottom:0;
@@ -475,35 +401,36 @@ body{
   z-index: 2;
   pointer-events: none;
 }
-.cleanSlider__viewport::before{
+.marquee__viewport::before{
   left:0;
   background: linear-gradient(90deg, rgba(7,7,10,1), rgba(7,7,10,0));
 }
-.cleanSlider__viewport::after{
+.marquee__viewport::after{
   right:0;
   background: linear-gradient(270deg, rgba(7,7,10,1), rgba(7,7,10,0));
 }
 
-.cleanSlider__track{
+/* Track horizontal */
+.marquee__track{
   display: flex;
   gap: 12px;
+  flex-wrap: nowrap;
+  width: max-content;
   will-change: transform;
-  transform: translateX(0);
-  transition: transform .55s ease;
+  transform: translate3d(0,0,0);
 }
 
-/* 1 card visible por paso */
-.card--slide{
-  flex: 0 0 100%;
+/* Cards del marquee */
+.mqCard{
+  flex: 0 0 auto;
+  width: min(360px, 82vw);
 }
 
-/* metadata */
-.card__meta{
-  margin-top: 10px;
-  color: rgba(255,255,255,0.62);
-  font-weight: 700;
-  font-size: 12px;
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .marquee__track{ transform: none !important; }
 }
+
 /* Responsive */
 @media (max-width: 900px){
   .cards{ grid-template-columns: 1fr; }
@@ -513,4 +440,4 @@ body{
   .nav__links a{ display:none; }
   .nav__links a.btn{ display:inline-flex; }
   .heroTop{ min-height: 560px; }
-}
+  }
