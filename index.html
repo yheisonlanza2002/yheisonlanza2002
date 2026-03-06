@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
@@ -33,7 +33,7 @@
     </nav>
 
     <div class="heroTop__media" role="img" aria-label="Imagen temática de tecnología">
-      <!-- Sube tu imagen a: assets/hero.jpg (recomendado) -->
+      <!-- Sube tu imagen a: assets/hero.jpg -->
       <img class="heroTop__img" src="assets/hero.jpg" alt="Tecnología: mano humana y mano robótica" loading="eager" />
       <div class="heroTop__overlay" aria-hidden="true"></div>
     </div>
@@ -79,7 +79,7 @@
   </header>
 
   <main>
-    <!-- SOBRE MI (FIJO, NO SE MUEVE) -->
+    <!-- SOBRE MI (FIJO) -->
     <section id="sobre-mi" class="section container">
       <div class="section__head">
         <h2>Sobre mí</h2>
@@ -105,11 +105,11 @@
       </div>
     </section>
 
-    <!-- HIGHLIGHTS: CARRUSEL LIMPIO HORIZONTAL INFINITO (SIN BOTONES) -->
+    <!-- HIGHLIGHTS: CARRUSEL HORIZONTAL INFINITO (CINTA) -->
     <section class="section container" id="highlights">
       <div class="section__head">
         <h2>Highlights</h2>
-        <p>Proyectos, habilidades y tecnologías (scroll horizontal infinito automático).</p>
+        <p>Tarjetas en fila (una delante de otra) con scroll infinito automático.</p>
       </div>
 
       <div class="marquee" aria-label="Carrusel infinito">
@@ -251,22 +251,20 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
-  <!-- JS: carrusel infinito limpio (sin botones) -->
   <script>
     (function () {
       const viewport = document.getElementById("mqViewport");
       const track = document.getElementById("mqTrack");
       if (!viewport || !track) return;
 
-      // Duplicar el contenido para loop infinito
+      // Duplicar cards para loop infinito
       const original = Array.from(track.children);
       original.forEach(node => track.appendChild(node.cloneNode(true)));
 
       let x = 0;
-      let speed = 0.55; // velocidad (sube/baja si quieres)
+      let speed = 0.7; // velocidad (más alta = más rápido)
 
       function loopWidth() {
-        // La mitad del scrollWidth corresponde al set original
         return track.scrollWidth / 2;
       }
 
@@ -275,7 +273,6 @@
       window.addEventListener("resize", recalc);
       requestAnimationFrame(recalc);
 
-      // Pausa al pasar el mouse (PC) o tocar (móvil)
       let paused = false;
       viewport.addEventListener("mouseenter", () => paused = true);
       viewport.addEventListener("mouseleave", () => paused = false);
@@ -285,7 +282,7 @@
       function tick() {
         if (!paused) {
           x += speed;
-          if (w > 0 && x >= w) x -= w; // wrap perfecto
+          if (w > 0 && x >= w) x -= w;
           track.style.transform = `translate3d(${-x}px, 0, 0)`;
         }
         requestAnimationFrame(tick);
