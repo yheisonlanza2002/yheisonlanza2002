@@ -449,6 +449,61 @@ body{
 }
 .iconbtn:active{ transform: translateY(1px); }
 
+/* Carrusel limpio (sin botones) */
+.cleanSlider{
+  position: relative;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.cleanSlider__viewport{
+  overflow: hidden;
+  padding: 14px;
+  position: relative;
+}
+
+/* fades laterales para que se vea premium */
+.cleanSlider__viewport::before,
+.cleanSlider__viewport::after{
+  content:"";
+  position:absolute;
+  top:0; bottom:0;
+  width: 72px;
+  z-index: 2;
+  pointer-events: none;
+}
+.cleanSlider__viewport::before{
+  left:0;
+  background: linear-gradient(90deg, rgba(7,7,10,1), rgba(7,7,10,0));
+}
+.cleanSlider__viewport::after{
+  right:0;
+  background: linear-gradient(270deg, rgba(7,7,10,1), rgba(7,7,10,0));
+}
+
+.cleanSlider__track{
+  display: flex;
+  gap: 12px;
+  will-change: transform;
+  transform: translateX(0);
+  transition: transform .55s ease;
+}
+
+/* 1 card visible por paso */
+.card--slide{
+  flex: 0 0 100%;
+}
+
+/* metadata */
+.card__meta{
+  margin-top: 10px;
+  color: rgba(255,255,255,0.62);
+  font-weight: 700;
+  font-size: 12px;
+}
 /* Responsive */
 @media (max-width: 900px){
   .cards{ grid-template-columns: 1fr; }
