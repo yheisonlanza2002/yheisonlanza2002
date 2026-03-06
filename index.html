@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
@@ -33,14 +33,7 @@
     </nav>
 
     <div class="heroTop__media" role="img" aria-label="Imagen temática de tecnología">
-      <!--
-        Coloca tu imagen aquí:
-        - Crea la carpeta assets/
-        - Sube una imagen y nómbrala hero.jpg
-        - Debe quedar: assets/hero.jpg
-
-        Si no existe, verás el degradado de fondo igualmente.
-      -->
+      <!-- Sube tu imagen a: assets/hero.jpg (recomendado) -->
       <img class="heroTop__img" src="assets/hero.jpg" alt="Tecnología: mano humana y mano robótica" loading="eager" />
       <div class="heroTop__overlay" aria-hidden="true"></div>
     </div>
@@ -86,7 +79,7 @@
   </header>
 
   <main>
-    <!-- SOBRE MI -->
+    <!-- SOBRE MI (FIJO, NO SE MUEVE) -->
     <section id="sobre-mi" class="section container">
       <div class="section__head">
         <h2>Sobre mí</h2>
@@ -112,50 +105,71 @@
       </div>
     </section>
 
-    <!-- CARRUSEL INFINITO -->
-    <!-- CARRUSEL LIMPIO (sin botones, cards estilo "Sobre mí") -->
-<section class="section container" id="highlights">
-  <div class="section__head">
-    <h2>Highlights</h2>
-    <p>Proyectos, habilidades y tecnologías (desliza automáticamente).</p>
-  </div>
-
-  <div class="cleanSlider" aria-label="Carrusel automático">
-    <div class="cleanSlider__viewport" id="cleanViewport">
-      <div class="cleanSlider__track" id="cleanTrack">
-        <article class="card card--slide">
-          <h3>Asoprovin</h3>
-          <p>Sistema web administrativo con CodeIgniter 4 (MVC), módulos y UI responsive.</p>
-          <div class="card__meta">PHP · CodeIgniter 4 · JavaScript · Bootstrap 5</div>
-        </article>
-
-        <article class="card card--slide">
-          <h3>GIM</h3>
-          <p>Sistema para gimnasio en PHP nativo con pantallas de control/registro y administración.</p>
-          <div class="card__meta">PHP · JavaScript · Bootstrap 5</div>
-        </article>
-
-        <article class="card card--slide">
-          <h3>Frontend</h3>
-          <p>Interfaces limpias, consistentes y responsivas con HTML5, CSS3 y JavaScript.</p>
-          <div class="card__meta">HTML5 · CSS3 · JavaScript</div>
-        </article>
-
-        <article class="card card--slide">
-          <h3>Backend (CI4 / PHP)</h3>
-          <p>Estructura mantenible: rutas, controladores, vistas, formularios y lógica de negocio.</p>
-          <div class="card__meta">MVC · CRUD · Modularidad</div>
-        </article>
-
-        <article class="card card--slide">
-          <h3>Aprendizaje</h3>
-          <p>Mejorando con React y Node.js para ampliar mi perfil full‑stack.</p>
-          <div class="card__meta">React · Node.js · Python (básico)</div>
-        </article>
+    <!-- HIGHLIGHTS: CARRUSEL LIMPIO HORIZONTAL INFINITO (SIN BOTONES) -->
+    <section class="section container" id="highlights">
+      <div class="section__head">
+        <h2>Highlights</h2>
+        <p>Proyectos, habilidades y tecnologías (scroll horizontal infinito automático).</p>
       </div>
-    </div>
-  </div>
-</section>
+
+      <div class="marquee" aria-label="Carrusel infinito">
+        <div class="marquee__viewport" id="mqViewport">
+          <div class="marquee__track" id="mqTrack">
+            <article class="card mqCard">
+              <h3>Asoprovin</h3>
+              <p>Sistema web administrativo con CodeIgniter 4 (MVC), módulos y UI responsive.</p>
+              <div class="card__meta">PHP · CI4 · JavaScript · Bootstrap 5</div>
+            </article>
+
+            <article class="card mqCard">
+              <h3>GIM</h3>
+              <p>Sistema para gimnasio en PHP nativo con pantallas de control/registro y administración.</p>
+              <div class="card__meta">PHP · JavaScript · Bootstrap 5</div>
+            </article>
+
+            <article class="card mqCard">
+              <h3>Frontend</h3>
+              <p>Interfaces limpias, consistentes y responsivas con HTML5, CSS3 y JavaScript.</p>
+              <div class="card__meta">HTML5 · CSS3 · JavaScript</div>
+            </article>
+
+            <article class="card mqCard">
+              <h3>Backend (CI4 / PHP)</h3>
+              <p>Estructura mantenible: rutas, controladores, vistas, formularios y lógica de negocio.</p>
+              <div class="card__meta">MVC · CRUD · Modularidad</div>
+            </article>
+
+            <article class="card mqCard">
+              <h3>Aprendizaje</h3>
+              <p>Mejorando con React y Node.js para ampliar mi perfil full‑stack.</p>
+              <div class="card__meta">React · Node.js · Python (básico)</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECNOLOGÍAS -->
+    <section id="tecnologias" class="section container">
+      <div class="section__head">
+        <h2>Tecnologías</h2>
+        <p>Stack principal y herramientas con las que desarrollo proyectos web.</p>
+      </div>
+
+      <div class="chips">
+        <span class="chip">HTML5</span>
+        <span class="chip">CSS3</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip chip--accent">Bootstrap 5</span>
+        <span class="chip chip--accent">PHP</span>
+        <span class="chip chip--accent">CodeIgniter 4</span>
+        <span class="chip">Laravel (conocimientos)</span>
+        <span class="chip">React (básico/intermedio)</span>
+        <span class="chip">Node.js (básico/intermedio)</span>
+        <span class="chip">Python (básico)</span>
+        <span class="chip">Git / GitHub</span>
+      </div>
+    </section>
 
     <!-- PROYECTOS -->
     <section id="proyectos" class="section container">
@@ -230,59 +244,54 @@
         <span class="footer__sep">·</span>
         <span class="muted">Hecho con HTML + CSS + JS</span>
       </footer>
+    </section>
+  </main>
 
-      <script>
-  (function () {
-    const track = document.getElementById("cleanTrack");
-    const viewport = document.getElementById("cleanViewport");
-    if (!track || !viewport) return;
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
-    const slides = Array.from(track.children);
-    let index = 0;
-    let step = 0;
+  <!-- JS: carrusel infinito limpio (sin botones) -->
+  <script>
+    (function () {
+      const viewport = document.getElementById("mqViewport");
+      const track = document.getElementById("mqTrack");
+      if (!viewport || !track) return;
 
-    function calcStep() {
-      const first = track.querySelector(".card--slide");
-      if (!first) return 0;
-      const styles = getComputedStyle(track);
-      const gap = parseFloat(styles.columnGap || styles.gap || "0");
-      return first.getBoundingClientRect().width + gap;
-    }
+      // Duplicar el contenido para loop infinito
+      const original = Array.from(track.children);
+      original.forEach(node => track.appendChild(node.cloneNode(true)));
 
-    function goTo(i, instant = false) {
-      index = (i + slides.length) % slides.length;
-      if (instant) track.style.transition = "none";
-      track.style.transform = `translateX(${-index * step}px)`;
-      if (instant) requestAnimationFrame(() => track.style.transition = "transform .55s ease");
-    }
+      let x = 0;
+      let speed = 0.55; // velocidad (sube/baja si quieres)
 
-    function recalc() {
-      step = calcStep();
-      goTo(index, true);
-    }
+      function loopWidth() {
+        // La mitad del scrollWidth corresponde al set original
+        return track.scrollWidth / 2;
+      }
 
-    window.addEventListener("resize", recalc);
-    requestAnimationFrame(recalc);
+      let w = 0;
+      function recalc() { w = loopWidth(); }
+      window.addEventListener("resize", recalc);
+      requestAnimationFrame(recalc);
 
-    // Autoplay (limpio, sin controles)
-    setInterval(() => {
-      goTo(index + 1);
-    }, 3200);
+      // Pausa al pasar el mouse (PC) o tocar (móvil)
+      let paused = false;
+      viewport.addEventListener("mouseenter", () => paused = true);
+      viewport.addEventListener("mouseleave", () => paused = false);
+      viewport.addEventListener("touchstart", () => paused = true, { passive: true });
+      viewport.addEventListener("touchend", () => paused = false);
 
-    // Opcional: pausa al tocar/mantener (móvil) o hover (PC)
-    // Si quieres que no se pause nunca, dime y lo quito.
-    let paused = false;
-
-    viewport.addEventListener("mouseenter", () => paused = true);
-    viewport.addEventListener("mouseleave", () => paused = false);
-
-    // Reemplazar el interval para respetar paused
-    // (lo hacemos sin duplicar intervalos)
-    const oldInterval = window.setInterval;
-    // No tocamos global. Lo dejamos simple: si quieres pausa real, lo re-armo.
-  })();
-      </script>
-
-      
+      function tick() {
+        if (!paused) {
+          x += speed;
+          if (w > 0 && x >= w) x -= w; // wrap perfecto
+          track.style.transform = `translate3d(${-x}px, 0, 0)`;
+        }
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    })();
+  </script>
 </body>
 </html>
