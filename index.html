@@ -6,354 +6,281 @@
   <meta name="description" content="Portafolio de Yheison Stiven Lanza Rojas — Desarrollador Web Full‑Stack (PHP/CodeIgniter 4, JavaScript, Bootstrap 5)." />
   <title>Yheison Lanza | Portafolio</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap 5 (CSS) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-  <!-- Custom styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="bg-black-gold">
-  <!-- Decorative background -->
-  <div class="bgfx" aria-hidden="true"></div>
+<body>
+  <div class="bg-glow" aria-hidden="true"></div>
 
-  <!-- NAV -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top nav-glass">
-    <div class="container">
-      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#top">
-        <span class="brand-dot" aria-hidden="true"></span>
-        <span>Yheison Lanza</span>
+  <!-- HERO CON IMAGEN + NAVBAR OVERLAY -->
+  <header class="heroTop" id="top">
+    <nav class="nav container nav--overlay">
+      <a class="brand" href="#top" aria-label="Ir al inicio">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">Yheison Lanza</span>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
-              aria-controls="nav" aria-expanded="false" aria-label="Abrir menú">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="nav">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
-          <li class="nav-item"><a class="nav-link" href="#tecnologias">Tecnologías</a></li>
-          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
-          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-          <li class="nav-item ms-lg-2">
-            <a class="btn btn-gold btn-sm px-3" href="#contacto">Contacto</a>
-          </li>
-        </ul>
+      <div class="nav__links">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#tecnologias">Tecnologías</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto" class="btn btn--small">Contacto</a>
       </div>
+    </nav>
+
+    <div class="heroTop__media" role="img" aria-label="Imagen temática de tecnología">
+      <!--
+        Coloca tu imagen aquí:
+        - Crea la carpeta assets/
+        - Sube una imagen y nómbrala hero.jpg
+        - Debe quedar: assets/hero.jpg
+
+        Si no existe, verás el degradado de fondo igualmente.
+      -->
+      <img class="heroTop__img" src="assets/hero.jpg" alt="Tecnología: mano humana y mano robótica" loading="eager" />
+      <div class="heroTop__overlay" aria-hidden="true"></div>
     </div>
-  </nav>
 
-  <main id="top">
-    <!-- HERO -->
-    <header class="py-5">
-      <div class="container">
-        <div class="row align-items-center g-4">
-          <div class="col-12 col-lg-7">
-            <div class="badge badge-soft mb-3">
-              <span class="status-dot me-2"></span>
-              Desarrollador Web Full‑Stack · Colombia
-            </div>
+    <div class="heroTop__content container">
+      <div class="hero__badge">
+        <span class="dot"></span>
+        Desarrollador Web Full‑Stack · Colombia
+      </div>
 
-            <h1 class="display-title mb-3">
-              Yheison Stiven<br>
-              <span class="text-gold">Lanza Rojas</span>
-            </h1>
+      <h1 class="hero__title">
+        Yheison Stiven<br />
+        <span class="hero__title--accent">Lanza Rojas</span>
+      </h1>
 
-            <p class="lead text-muted-soft mb-4">
-              Desarrollo interfaces modernas y sistemas web orientados a negocio con
-              <strong>PHP</strong> (CodeIgniter 4), <strong>JavaScript</strong> y <strong>Bootstrap 5</strong>.
-              Enfoque fuerte en <strong>Frontend</strong> con buenas bases en <strong>Backend</strong>.
-            </p>
+      <p class="hero__subtitle">
+        Construyo interfaces <strong>modernas</strong> y sistemas web orientados a negocio con
+        <strong>PHP</strong> (CodeIgniter 4), <strong>JavaScript</strong> y <strong>Bootstrap 5</strong>.
+      </p>
 
-            <div class="d-flex flex-wrap gap-2">
-              <a class="btn btn-gold px-4" href="#proyectos">Ver proyectos</a>
-              <a class="btn btn-outline-gold px-4" href="https://yheisonlanza2002.github.io/yheisonlanza2002/" target="_blank" rel="noreferrer">
-                Abrir Portafolio
-              </a>
-              <a class="btn btn-outline-light px-4" href="https://www.linkedin.com/in/yheison-lanza-235b60203?trk=contact-info" target="_blank" rel="noreferrer">
-                LinkedIn
-              </a>
-              <a class="btn btn-outline-light px-4" href="mailto:yheisonlanza@gmail.com">
-                Email
-              </a>
-            </div>
+      <div class="hero__cta">
+        <a class="btn" href="#proyectos">Ver proyectos</a>
+        <a class="btn btn--ghost" href="https://www.linkedin.com/in/yheison-lanza-235b60203?trk=contact-info" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn btn--ghost" href="https://github.com/yheisonlanza2002" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn btn--ghost" href="mailto:yheisonlanza@gmail.com">Email</a>
+      </div>
 
-            <div class="row g-3 mt-4">
-              <div class="col-12 col-md-4">
-                <div class="kpi">
-                  <div class="kpi__value">UI</div>
-                  <div class="kpi__label">Responsive / Bootstrap 5</div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4">
-                <div class="kpi">
-                  <div class="kpi__value">CI4</div>
-                  <div class="kpi__label">MVC + módulos</div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4">
-                <div class="kpi">
-                  <div class="kpi__value">PHP</div>
-                  <div class="kpi__label">Backend sólido</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Carrusel -->
-          <div class="col-12 col-lg-5">
-            <div class="panel p-3 p-md-4">
-              <div class="d-flex align-items-center justify-content-between mb-2">
-                <h2 class="h5 mb-0">Highlights</h2>
-                <span class="mini-note">Carrusel</span>
-              </div>
-
-              <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="slidebox">
-                      <div class="d-flex flex-wrap gap-2 mb-3">
-                        <span class="pill">Asoprovin</span>
-                        <span class="pill pill-soft">CodeIgniter 4</span>
-                        <span class="pill pill-soft">Bootstrap 5</span>
-                      </div>
-                      <h3 class="h5 mb-2">Sistema Web Administrativo</h3>
-                      <p class="text-muted-soft mb-0">
-                        Módulos de gestión, formularios y panel administrativo con estructura MVC mantenible.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="slidebox">
-                      <div class="d-flex flex-wrap gap-2 mb-3">
-                        <span class="pill">GIM</span>
-                        <span class="pill pill-soft">PHP nativo</span>
-                        <span class="pill pill-soft">UI Responsive</span>
-                      </div>
-                      <h3 class="h5 mb-2">Gestión para Gimnasio</h3>
-                      <p class="text-muted-soft mb-0">
-                        Pantallas de control/registro y administración operativa, enfoque en experiencia de usuario.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="slidebox">
-                      <div class="d-flex flex-wrap gap-2 mb-3">
-                        <span class="pill">Stack</span>
-                        <span class="pill pill-soft">HTML/CSS</span>
-                        <span class="pill pill-soft">JavaScript</span>
-                        <span class="pill pill-soft">PHP</span>
-                      </div>
-                      <h3 class="h5 mb-2">Tecnologías y enfoque</h3>
-                      <p class="text-muted-soft mb-0">
-                        Interfaces limpias, responsive y módulos backend en PHP/CI4. Aprendiendo React/Node.js para ampliar el stack.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Siguiente</span>
-                </button>
-              </div>
-
-              <div class="mt-3 d-flex flex-wrap gap-2">
-                <!-- Si subes tu CV a assets/CV-Yheison-Lanza.pdf, activa este botón -->
-                <!-- <a class="btn btn-outline-gold btn-sm" href="assets/CV-Yheison-Lanza.pdf" target="_blank" rel="noreferrer">Descargar CV</a> -->
-                <a class="btn btn-outline-gold btn-sm" href="#contacto">Solicitar demo</a>
-                <a class="btn btn-outline-light btn-sm" href="https://github.com/yheisonlanza2002" target="_blank" rel="noreferrer">Ver GitHub</a>
-              </div>
-            </div>
-          </div>
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__kpi">UI</div>
+          <div class="stat__label">Responsive / Bootstrap 5</div>
+        </div>
+        <div class="stat">
+          <div class="stat__kpi">CI4</div>
+          <div class="stat__label">MVC + módulos</div>
+        </div>
+        <div class="stat">
+          <div class="stat__kpi">PHP</div>
+          <div class="stat__label">Backend sólido</div>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
+  <main>
     <!-- SOBRE MI -->
-    <section id="sobre-mi" class="py-5">
-      <div class="container">
-        <div class="row g-4 align-items-start">
-          <div class="col-12 col-lg-5">
-            <h2 class="h2 mb-3">Sobre mí</h2>
-            <p class="text-muted-soft mb-0">
-              Soy desarrollador web con enfoque fuerte en frontend y experiencia en backend.
-              Me gusta construir soluciones claras y mantenibles, cuidando la experiencia de usuario y la consistencia visual.
-            </p>
+    <section id="sobre-mi" class="section container">
+      <div class="section__head">
+        <h2>Sobre mí</h2>
+        <p>
+          Soy desarrollador web con enfoque fuerte en frontend y experiencia en backend.
+          Me gusta construir soluciones claras, mantenibles y con buena experiencia de usuario.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Frontend</h3>
+          <p>Interfaces limpias, responsivas y consistentes con HTML/CSS/JS y Bootstrap 5.</p>
+        </article>
+        <article class="card">
+          <h3>Backend</h3>
+          <p>PHP nativo y CodeIgniter 4 (MVC), módulos, formularios y lógica de negocio.</p>
+        </article>
+        <article class="card">
+          <h3>Aprendizaje</h3>
+          <p>Mejorando con React, Node.js y Python para ampliar el perfil full‑stack.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CARRUSEL INFINITO -->
+    <section class="section container">
+      <div class="section__head">
+        <h2>Highlights</h2>
+        <p>Carrusel infinito (loop real) con texto de proyectos, habilidades y tecnologías.</p>
+      </div>
+
+      <div class="infinite" aria-label="Carrusel infinito">
+        <div class="infinite__fade infinite__fade--l" aria-hidden="true"></div>
+        <div class="infinite__fade infinite__fade--r" aria-hidden="true"></div>
+
+        <div class="infinite__viewport" id="infViewport">
+          <div class="infinite__track" id="infTrack">
+            <!-- Slides (se duplican por JS para el loop) -->
+            <article class="slideCard">
+              <div class="slideCard__top">
+                <span class="pill">Proyecto</span>
+                <span class="pill pill--soft">CodeIgniter 4</span>
+              </div>
+              <h3>Asoprovin</h3>
+              <p>Sistema web administrativo con estructura MVC, módulos y UI responsive.</p>
+              <div class="slideCard__meta">Stack: PHP · CI4 · JS · Bootstrap 5</div>
+            </article>
+
+            <article class="slideCard">
+              <div class="slideCard__top">
+                <span class="pill">Proyecto</span>
+                <span class="pill pill--soft">PHP nativo</span>
+              </div>
+              <h3>GIM</h3>
+              <p>Gestión para gimnasio: control/registro y administración operativa.</p>
+              <div class="slideCard__meta">Stack: PHP · JS · Bootstrap 5</div>
+            </article>
+
+            <article class="slideCard">
+              <div class="slideCard__top">
+                <span class="pill">Habilidad</span>
+                <span class="pill pill--soft">UI</span>
+              </div>
+              <h3>Frontend limpio</h3>
+              <p>Diseño responsivo, componentes claros y detalles visuales consistentes.</p>
+              <div class="slideCard__meta">HTML · CSS3 · JavaScript</div>
+            </article>
+
+            <article class="slideCard">
+              <div class="slideCard__top">
+                <span class="pill">Stack</span>
+                <span class="pill pill--soft">Backend</span>
+              </div>
+              <h3>PHP + CI4</h3>
+              <p>Módulos, formularios, CRUD y estructura mantenible basada en MVC.</p>
+              <div class="slideCard__meta">PHP · CodeIgniter 4</div>
+            </article>
+
+            <article class="slideCard">
+              <div class="slideCard__top">
+                <span class="pill">Aprendizaje</span>
+                <span class="pill pill--soft">Full‑Stack</span>
+              </div>
+              <h3>React / Node.js</h3>
+              <p>En crecimiento para ampliar el stack y construir soluciones más completas.</p>
+              <div class="slideCard__meta">React · Node.js</div>
+            </article>
           </div>
-          <div class="col-12 col-lg-7">
-            <div class="row g-3">
-              <div class="col-12 col-md-4">
-                <div class="cardx">
-                  <h3 class="h6 mb-2">Frontend</h3>
-                  <p class="text-muted-soft mb-0">UI responsiva con HTML/CSS/JS y Bootstrap 5.</p>
-                </div>
-              </div>
-              <div class="col-12 col-md-4">
-                <div class="cardx">
-                  <h3 class="h6 mb-2">Backend</h3>
-                  <p class="text-muted-soft mb-0">PHP nativo y CodeIgniter 4 (MVC), módulos y lógica de negocio.</p>
-                </div>
-              </div>
-              <div class="col-12 col-md-4">
-                <div class="cardx">
-                  <h3 class="h6 mb-2">Aprendizaje</h3>
-                  <p class="text-muted-soft mb-0">React / Node.js / Python para ampliar el perfil full‑stack.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        </div>
+
+        <div class="infinite__controls">
+          <button class="iconbtn" id="infPrev" type="button" aria-label="Anterior">‹</button>
+          <button class="iconbtn" id="infPause" type="button" aria-label="Pausar/Reanudar">⏸</button>
+          <button class="iconbtn" id="infNext" type="button" aria-label="Siguiente">›</button>
         </div>
       </div>
     </section>
 
     <!-- TECNOLOGÍAS -->
-    <section id="tecnologias" class="py-5">
-      <div class="container">
-        <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-3">
-          <h2 class="h2 mb-0">Tecnologías</h2>
-          <span class="mini-note">Stack principal</span>
-        </div>
-
-        <div class="d-flex flex-wrap gap-2">
-          <span class="chip">HTML5</span>
-          <span class="chip">CSS3</span>
-          <span class="chip">JavaScript</span>
-          <span class="chip chip-gold">Bootstrap 5</span>
-          <span class="chip chip-gold">PHP</span>
-          <span class="chip chip-gold">CodeIgniter 4</span>
-          <span class="chip">Laravel (conocimientos)</span>
-          <span class="chip">React (básico/intermedio)</span>
-          <span class="chip">Node.js (básico/intermedio)</span>
-          <span class="chip">Python (básico)</span>
-          <span class="chip">Git/GitHub</span>
-        </div>
+    <section id="tecnologias" class="section container">
+      <div class="section__head">
+        <h2>Tecnologías</h2>
+        <p>Stack principal y herramientas con las que desarrollo proyectos web.</p>
       </div>
-    </section>
 
-    <!-- HABILIDADES / SERVICIOS -->
-    <section id="habilidades" class="py-5">
-      <div class="container">
-        <h2 class="h2 mb-3">Habilidades</h2>
-        <div class="row g-3">
-          <div class="col-12 col-lg-6">
-            <div class="cardx">
-              <h3 class="h6 mb-2">Desarrollo Web</h3>
-              <ul class="list-clean mb-0">
-                <li>Maquetación responsive y consistente</li>
-                <li>Componentes UI y páginas informativas</li>
-                <li>Buenas prácticas de estructura y orden</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-12 col-lg-6">
-            <div class="cardx">
-              <h3 class="h6 mb-2">Sistemas PHP / CI4</h3>
-              <ul class="list-clean mb-0">
-                <li>Módulos administrativos (CRUD, formularios)</li>
-                <li>Estructura MVC (CI4): rutas, controladores, vistas</li>
-                <li>Integración de lógica de negocio</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div class="chips">
+        <span class="chip">HTML5</span>
+        <span class="chip">CSS3</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip chip--accent">Bootstrap 5</span>
+        <span class="chip chip--accent">PHP</span>
+        <span class="chip chip--accent">CodeIgniter 4</span>
+        <span class="chip">Laravel (conocimientos)</span>
+        <span class="chip">React (básico/intermedio)</span>
+        <span class="chip">Node.js (básico/intermedio)</span>
+        <span class="chip">Python (básico)</span>
+        <span class="chip">Git / GitHub</span>
       </div>
     </section>
 
     <!-- PROYECTOS -->
-    <section id="proyectos" class="py-5">
-      <div class="container">
-        <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-3">
-          <h2 class="h2 mb-0">Proyectos</h2>
-          <span class="mini-note">Actualmente en local</span>
-        </div>
+    <section id="proyectos" class="section container">
+      <div class="section__head">
+        <h2>Proyectos</h2>
+        <p>Actualmente en entorno local. Puedo publicarlos cuando se definan hosting y configuración.</p>
+      </div>
 
-        <div class="row g-3">
-          <div class="col-12 col-lg-6">
-            <article class="cardx cardx--project">
-              <div class="d-flex align-items-start justify-content-between gap-2">
-                <h3 class="h5 mb-1">Asoprovin</h3>
-                <span class="pill">CI4</span>
-              </div>
-              <p class="text-muted-soft mb-3">
-                Sistema web administrativo con estructura MVC y módulos de gestión.
-              </p>
-              <ul class="list-clean mb-0">
-                <li>Panel administrativo</li>
-                <li>Gestión de datos (formularios / CRUD)</li>
-                <li>Bootstrap 5 + JavaScript</li>
-              </ul>
-            </article>
+      <div class="projects">
+        <article class="project">
+          <div class="project__top">
+            <h3>Asoprovin — Sistema Web Administrativo</h3>
+            <span class="pill">CI4</span>
           </div>
+          <p>Sistema orientado a administración y gestión de información.</p>
+          <ul class="list">
+            <li>Panel administrativo</li>
+            <li>Formularios y pantallas de gestión</li>
+            <li>UI responsive con Bootstrap 5</li>
+          </ul>
+          <div class="project__actions">
+            <a class="link" href="#contacto">Solicitar demo</a>
+            <span class="muted">Demo: Próximamente</span>
+          </div>
+        </article>
 
-          <div class="col-12 col-lg-6">
-            <article class="cardx cardx--project">
-              <div class="d-flex align-items-start justify-content-between gap-2">
-                <h3 class="h5 mb-1">GIM</h3>
-                <span class="pill">PHP</span>
-              </div>
-              <p class="text-muted-soft mb-3">
-                Aplicación para control/registro y administración operativa en entorno local.
-              </p>
-              <ul class="list-clean mb-0">
-                <li>Flujos de registro/administración</li>
-                <li>Diseño adaptable móvil/escritorio</li>
-                <li>Base lista para escalar</li>
-              </ul>
-            </article>
+        <article class="project">
+          <div class="project__top">
+            <h3>GIM — Sistema de Gestión para Gimnasio</h3>
+            <span class="pill">PHP</span>
           </div>
-        </div>
+          <p>Aplicación para control/registro y administración operativa.</p>
+          <ul class="list">
+            <li>Flujos de registro/administración</li>
+            <li>UI clara y adaptable</li>
+            <li>Base lista para escalar</li>
+          </ul>
+          <div class="project__actions">
+            <a class="link" href="#contacto">Solicitar demo</a>
+            <span class="muted">Demo: Próximamente</span>
+          </div>
+        </article>
       </div>
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="py-5">
-      <div class="container">
-        <h2 class="h2 mb-3">Contacto</h2>
-        <div class="row g-3">
-          <div class="col-12 col-lg-4">
-            <a class="contact-card" href="mailto:yheisonlanza@gmail.com">
-              <div class="contact-card__label">Email</div>
-              <div class="contact-card__value">yheisonlanza@gmail.com</div>
-            </a>
-          </div>
-          <div class="col-12 col-lg-4">
-            <a class="contact-card" href="https://www.linkedin.com/in/yheison-lanza-235b60203?trk=contact-info" target="_blank" rel="noreferrer">
-              <div class="contact-card__label">LinkedIn</div>
-              <div class="contact-card__value">Ver perfil</div>
-            </a>
-          </div>
-          <div class="col-12 col-lg-4">
-            <a class="contact-card" href="https://github.com/yheisonlanza2002" target="_blank" rel="noreferrer">
-              <div class="contact-card__label">GitHub</div>
-              <div class="contact-card__value">@yheisonlanza2002</div>
-            </a>
-          </div>
-        </div>
-
-        <footer class="pt-4 mt-4 border-top border-soft text-center text-muted-soft">
-          © <span id="year"></span> Yheison Stiven Lanza Rojas · Hecho con Bootstrap 5
-        </footer>
+    <section id="contacto" class="section container">
+      <div class="section__head">
+        <h2>Contacto</h2>
+        <p>¿Tienes una oportunidad o un proyecto? Escríbeme y lo revisamos.</p>
       </div>
+
+      <div class="contact">
+        <a class="contact__item" href="mailto:yheisonlanza@gmail.com">
+          <span class="contact__label">Email</span>
+          <span class="contact__value">yheisonlanza@gmail.com</span>
+        </a>
+
+        <a class="contact__item" href="https://www.linkedin.com/in/yheison-lanza-235b60203?trk=contact-info" target="_blank" rel="noreferrer">
+          <span class="contact__label">LinkedIn</span>
+          <span class="contact__value">Ver perfil</span>
+        </a>
+
+        <a class="contact__item" href="https://github.com/yheisonlanza2002" target="_blank" rel="noreferrer">
+          <span class="contact__label">GitHub</span>
+          <span class="contact__value">@yheisonlanza2002</span>
+        </a>
+      </div>
+
+      <footer class="footer">
+        <span>© <span id="year"></span> Yheison Stiven Lanza Rojas</span>
+        <span class="footer__sep">·</span>
+        <span class="muted">Hecho con HTML + CSS + JS</span>
+      </footer>
     </section>
   </main>
 
@@ -361,9 +288,75 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
-  <!-- Bootstrap 5 (JS) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-          crossorigin="anonymous"></script>
+  <!-- Carrusel infinito (puede ir aquí mismo o en app.js; lo dejo aquí por simplicidad) -->
+  <script>
+    (function () {
+      const viewport = document.getElementById("infViewport");
+      const track = document.getElementById("infTrack");
+      const btnPrev = document.getElementById("infPrev");
+      const btnNext = document.getElementById("infNext");
+      const btnPause = document.getElementById("infPause");
+
+      // Duplicar contenido para loop suave
+      const original = Array.from(track.children);
+      original.forEach(node => track.appendChild(node.cloneNode(true)));
+
+      // Variables del loop
+      let paused = false;
+      let x = 0;
+      let speed = 0.55; // px por frame (ajusta si quieres más rápido)
+
+      // Ayuda: ancho del set original (antes de duplicar)
+      const getLoopWidth = () => {
+        let w = 0;
+        for (let i = 0; i < original.length; i++) w += original[i].offsetWidth;
+        // + gaps (si hay gap por CSS, medimos con scrollWidth/2 como fallback)
+        return Math.max(w, track.scrollWidth / 2);
+      };
+
+      let loopWidth = 0;
+
+      function recalc() {
+        loopWidth = getLoopWidth();
+      }
+      window.addEventListener("resize", recalc);
+      // Esperar un frame para que mida bien
+      requestAnimationFrame(() => { recalc(); });
+
+      function step() {
+        if (!paused) {
+          x += speed;
+          if (loopWidth > 0 && x >= loopWidth) x -= loopWidth; // wrap
+          track.style.transform = `translateX(${-x}px)`;
+        }
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+
+      // Controles
+      function nudge(dir) {
+        // Empujón para "siguiente/anterior"
+        x += dir * 260; // tamaño del salto
+        if (loopWidth > 0) {
+          x = ((x % loopWidth) + loopWidth) % loopWidth;
+        }
+        track.style.transform = `translateX(${-x}px)`;
+      }
+
+      btnPrev.addEventListener("click", () => nudge(-1));
+      btnNext.addEventListener("click", () => nudge(1));
+
+      btnPause.addEventListener("click", () => {
+        paused = !paused;
+        btnPause.textContent = paused ? "▶" : "⏸";
+      });
+
+      // Pausar al pasar el mouse (desktop)
+      viewport.addEventListener("mouseenter", () => paused = true);
+      viewport.addEventListener("mouseleave", () => paused = false);
+
+      // En móvil: tocar pausa
+    })();
+  </script>
 </body>
 </html>
