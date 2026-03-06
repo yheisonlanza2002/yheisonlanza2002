@@ -5,14 +5,17 @@
 </p>
 
 <p align="center">
+  <a href="https://yheisonlanza2002.github.io/yheisonlanza2002/" target="_blank" rel="noreferrer">
+    <img alt="Portafolio" src="https://img.shields.io/badge/Portafolio-Ver%20sitio-DAA520?style=for-the-badge&logo=google-chrome&logoColor=black">
+  </a>
   <a href="mailto:yheisonlanza@gmail.com">
-    <img alt="Email" src="https://img.shields.io/badge/Email-yheisonlanza%40gmail.com-informational">
+    <img alt="Email" src="https://img.shields.io/badge/Email-yheisonlanza%40gmail.com-informational?style=for-the-badge">
   </a>
-  <a href="https://www.linkedin.com/in/yheison-lanza-235b60203?trk=contact-info">
-    <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Conectar-0A66C2">
+  <a href="https://www.linkedin.com/in/yheison-lanza-235b60203?trk=contact-info" target="_blank" rel="noreferrer">
+    <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Conectar-0A66C2?style=for-the-badge">
   </a>
-  <a href="https://github.com/yheisonlanza2002">
-    <img alt="GitHub" src="https://img.shields.io/badge/GitHub-yheisonlanza2002-181717">
+  <a href="https://github.com/yheisonlanza2002" target="_blank" rel="noreferrer">
+    <img alt="GitHub" src="https://img.shields.io/badge/GitHub-yheisonlanza2002-181717?style=for-the-badge">
   </a>
 </p>
 
