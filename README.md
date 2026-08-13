@@ -69,18 +69,6 @@ Soy **Yheison Stiven Lanza Rojas**, **Desarrollador Web Full‑Stack** con enfoq
 
 ---
 
-## CV (Hoja de vida)
-
-Recomendación: agrega tu CV al repositorio para que sea descargable desde tu perfil.
-
-1. Crea una carpeta `assets/`
-2. Sube tu PDF con este nombre: `assets/CV-Yheison-Lanza.pdf`
-3. Luego agrega aquí el enlace:
-
-- **Descargar CV:** `assets/CV-Yheison-Lanza.pdf`
-
----
-
 ## Contacto
 
 - **Email:** yheisonlanza@gmail.com  

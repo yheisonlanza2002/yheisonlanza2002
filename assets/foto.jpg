@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12141c"/>
+      <stop offset="0.5" stop-color="#0a0b10"/>
+      <stop offset="1" stop-color="#060608"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d6b25e"/>
+      <stop offset="0.5" stop-color="#f2d48a"/>
+      <stop offset="1" stop-color="#d6b25e"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.4" r="0.55">
+      <stop offset="0" stop-color="#f2d48a" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#f2d48a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="600" rx="300" fill="url(#bg)"/>
+  <rect width="600" height="600" rx="300" fill="url(#halo)"/>
+
+  <!-- Anillo exterior -->
+  <circle cx="300" cy="300" r="272" fill="none" stroke="rgba(214,178,94,0.35)" stroke-width="2"/>
+  <circle cx="300" cy="300" r="262" fill="none" stroke="rgba(214,178,94,0.22)" stroke-width="1.5"/>
+
+  <!-- Puntos decorativos dorados -->
+  <g fill="#d6b25e" opacity="0.55">
+    <circle cx="300" cy="60" r="4"/>
+    <circle cx="118" cy="118" r="3"/>
+    <circle cx="482" cy="118" r="3"/>
+    <circle cx="60" cy="300" r="3"/>
+    <circle cx="540" cy="300" r="3"/>
+    <circle cx="118" cy="482" r="3"/>
+    <circle cx="482" cy="482" r="3"/>
+    <circle cx="300" cy="540" r="4"/>
+  </g>
+
+  <!-- Corona tecnológica superior -->
+  <polygon points="235,160 365,160 345,190 255,190" fill="url(#gold)" opacity="0.95"/>
+  <rect x="255" y="190" width="90" height="8" rx="4" fill="url(#gold)"/>
+
+  <!-- Monograma LT -->
+  <text x="300" y="335" font-family="Georgia, 'Times New Roman', serif" font-size="150" font-weight="bold" fill="url(#gold)" text-anchor="middle" filter="url(#glow)">LT</text>
+
+  <!-- Nombre -->
+  <text x="300" y="430" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="bold" letter-spacing="6" fill="#ffffff" opacity="0.92" text-anchor="middle">LANZA TECH</text>
+  <text x="300" y="462" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="8" fill="url(#gold)" text-anchor="middle">DYNAMIC</text>
+
+  <line x1="180" y1="492" x2="420" y2="492" stroke="rgba(214,178,94,0.5)" stroke-width="2"/>
+  <text x="300" y="516" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="4" fill="#ffffff" opacity="0.55" text-anchor="middle">D E S A R R O L L O &nbsp; W E B</text>
+</svg>
