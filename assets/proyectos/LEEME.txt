@@ -1,0 +1,15 @@
+Capturas de proyectos
+======================
+
+Sube aquí capturas de pantalla (o mockups) de cada proyecto con estos
+nombres exactos (puedes borrar este LEEME.txt cuando ya no lo necesites):
+
+  asoprovin.jpg           -> captura del sistema Asoprovin
+  gim.jpg                 -> captura del sistema GIM
+  tusintetica.jpg         -> captura del programa TuSintética
+  tienda-zapatillas.jpg   -> captura de la tienda de zapatillas
+
+Recomendaciones:
+- Formato JPG o WebP, orientación horizontal (16:10 aprox).
+- Si NO subes una captura, la tarjeta usa un panel con el nombre del
+  proyecto como fallback (se ve bien igualmente).

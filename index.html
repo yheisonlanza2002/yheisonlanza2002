@@ -16,6 +16,14 @@
 <body>
   <div class="bg-glow" aria-hidden="true"></div>
 
+  <!-- Barra de progreso de scroll -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"><span></span></div>
+
+  <!-- Botón volver arriba -->
+  <button class="back-top" id="backTop" aria-label="Volver arriba" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  </button>
+
   <!-- HERO CON IMAGEN + NAVBAR OVERLAY -->
   <header class="heroTop" id="top">
     <nav class="nav container nav--overlay">
@@ -24,21 +32,35 @@
         <span class="brand__text">Yheison Lanza</span>
       </a>
 
-      <div class="nav__links">
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__links" id="navMenu">
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#tecnologias">Tecnologías</a>
+        <a href="#experiencia">Experiencia</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#contacto" class="btn btn--small">Contacto</a>
       </div>
     </nav>
 
     <div class="heroTop__media" role="img" aria-label="Imagen temática de tecnología">
-      <!-- Sube tu imagen a: assets/hero.jpg -->
-      <img class="heroTop__img" src="assets/hero.jpg" alt="Tecnología: mano humana y mano robótica" loading="eager" />
+      <div class="heroTop__pattern" aria-hidden="true"></div>
+      <!-- Sube tu imagen a: assets/hero.jpg (si falta, se usa un patrón/gradiente elegante) -->
+      <img class="heroTop__img" src="assets/hero.jpg" alt="Tecnología: mano humana y mano robótica" loading="eager"
+           onerror="this.classList.add('is-missing')" />
       <div class="heroTop__overlay" aria-hidden="true"></div>
     </div>
 
     <div class="heroTop__content container">
+      <div class="hero__profile">
+        <!-- Sube tu foto a: assets/foto.jpg (si falta, se muestran tus iniciales) -->
+        <img class="hero__avatar" src="assets/foto.jpg" alt="Foto de Yheison Stiven Lanza Rojas" loading="lazy"
+             onerror="this.classList.add('is-missing')" />
+        <span class="hero__avatar hero__avatar--fallback" aria-hidden="true">YL</span>
+      </div>
+
       <div class="hero__badge">
         <span class="dot"></span>
         Desarrollador Web Full‑Stack · Colombia
@@ -56,6 +78,7 @@
 
       <div class="hero__cta">
         <a class="btn" href="#proyectos">Ver proyectos</a>
+        <a class="btn btn--ghost" href="assets/CV-Yheison-Lanza.pdf" download>Descargar CV</a>
         <a class="btn btn--ghost" href="https://www.linkedin.com/in/yheison-lanza-235b60203?trk=contact-info" target="_blank" rel="noreferrer">LinkedIn</a>
         <a class="btn btn--ghost" href="https://github.com/yheisonlanza2002" target="_blank" rel="noreferrer">GitHub</a>
         <a class="btn btn--ghost" href="mailto:yheisonlanza@gmail.com">Email</a>
@@ -79,34 +102,95 @@
   </header>
 
   <main>
-    <!-- SOBRE MI (FIJO) -->
-    <section id="sobre-mi" class="section container">
+    <!-- SOBRE MI -->
+    <section id="sobre-mi" class="section container reveal">
       <div class="section__head">
         <h2>Sobre mí</h2>
-        <p>
-          Soy desarrollador web con enfoque fuerte en frontend y experiencia en backend.
-          Me gusta construir soluciones claras, mantenibles y con buena experiencia de usuario.
-        </p>
+        <p>Una persona que convierte ideas en aplicaciones web útiles para el día a día de los negocios.</p>
       </div>
 
-      <div class="cards">
+      <div class="about">
+        <div class="about__intro">
+          <div class="about__photo">
+            <!-- Sube tu foto a: assets/foto.jpg -->
+            <img class="about__img" src="assets/foto.jpg" alt="Foto de Yheison Stiven Lanza Rojas" loading="lazy"
+                 onerror="this.classList.add('is-missing')" />
+            <span class="about__img-fallback" aria-hidden="true">YL</span>
+          </div>
+          <div class="about__text">
+            <p>
+              Hola, soy <strong>Yheison Stiven Lanza Rojas</strong>, desarrollador web <strong>full‑stack</strong> con sede en
+              <strong>Colombia</strong>. Me enfoco en construir aplicaciones web claras, mantenibles y con buena experiencia de usuario.
+            </p>
+            <p>
+              Trabajo principalmente con <strong>PHP</strong> y <strong>CodeIgniter 4</strong> en el backend y con
+              <strong>Bootstrap 5</strong> y <strong>JavaScript</strong> en el frontend. Me gusta presentar módulos
+              administrativos, formularios y flujos de negocio que resuelven problemas reales.
+            </p>
+            <p>
+              Aprendo cada día: ampliando mi perfil full‑stack con <strong>React</strong>, <strong>Node.js</strong> y
+              <strong>Python</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="about__skills">
+          <h3>Habilidades principales</h3>
+
+          <div class="skill">
+            <div class="skill__row"><span class="skill__name">HTML5 · CSS3 · Bootstrap 5</span><span class="skill__level">Alto</span></div>
+            <div class="skill__bar"><span style="width: 88%"></span></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill__row"><span class="skill__name">PHP · CodeIgniter 4 (MVC)</span><span class="skill__level">Alto</span></div>
+            <div class="skill__bar"><span style="width: 84%"></span></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill__row"><span class="skill__name">JavaScript (vanilla)</span><span class="skill__level">Intermedio</span></div>
+            <div class="skill__bar"><span style="width: 72%"></span></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill__row"><span class="skill__name">Git · GitHub</span><span class="skill__level">Intermedio</span></div>
+            <div class="skill__bar"><span style="width: 66%"></span></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill__row"><span class="skill__name">React · Node.js</span><span class="skill__level">En aprendizaje</span></div>
+            <div class="skill__bar"><span style="width: 40%"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards about__cards">
         <article class="card">
-          <h3>Frontend</h3>
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </span>
+          <h3>Maquetación y UI</h3>
           <p>Interfaces limpias, responsivas y consistentes con HTML/CSS/JS y Bootstrap 5.</p>
         </article>
         <article class="card">
-          <h3>Backend</h3>
-          <p>PHP nativo y CodeIgniter 4 (MVC), módulos, formularios y lógica de negocio.</p>
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+          </span>
+          <h3>Backend y lógica</h3>
+          <p>PHP nativo y CodeIgniter 4 (MVC): módulos, formularios, sesiones y flujos de negocio.</p>
         </article>
         <article class="card">
-          <h3>Aprendizaje</h3>
-          <p>Mejorando con React, Node.js y Python para ampliar el perfil full‑stack.</p>
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </span>
+          <h3>Aprendizaje constante</h3>
+          <p>Ampliando el perfil full‑stack con React, Node.js y Python.</p>
         </article>
       </div>
     </section>
 
     <!-- HIGHLIGHTS: CARRUSEL HORIZONTAL INFINITO (CINTA) -->
-    <section class="section container" id="highlights">
+    <section class="section container reveal" id="highlights">
       <div class="section__head">
         <h2>Highlights</h2>
         <p>Tarjetas en fila (una delante de otra) con scroll infinito automático.</p>
@@ -116,30 +200,45 @@
         <div class="marquee__viewport" id="mqViewport">
           <div class="marquee__track" id="mqTrack">
             <article class="card mqCard">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3z"/><path d="M14 3h7v7h-7z"/><path d="M3 14h7v7H3z"/><path d="M14 14h7v7h-7z"/></svg>
+              </span>
               <h3>Asoprovin</h3>
               <p>Sistema web administrativo con CodeIgniter 4 (MVC), módulos y UI responsive.</p>
               <div class="card__meta">PHP · CI4 · JavaScript · Bootstrap 5</div>
             </article>
 
             <article class="card mqCard">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </span>
               <h3>GIM</h3>
               <p>Sistema para gimnasio en PHP nativo con pantallas de control/registro y administración.</p>
               <div class="card__meta">PHP · JavaScript · Bootstrap 5</div>
             </article>
 
             <article class="card mqCard">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </span>
               <h3>Frontend</h3>
               <p>Interfaces limpias, consistentes y responsivas con HTML5, CSS3 y JavaScript.</p>
               <div class="card__meta">HTML5 · CSS3 · JavaScript</div>
             </article>
 
             <article class="card mqCard">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </span>
               <h3>Backend (CI4 / PHP)</h3>
               <p>Estructura mantenible: rutas, controladores, vistas, formularios y lógica de negocio.</p>
               <div class="card__meta">MVC · CRUD · Modularidad</div>
             </article>
 
             <article class="card mqCard">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </span>
               <h3>Aprendizaje</h3>
               <p>Mejorando con React y Node.js para ampliar mi perfil full‑stack.</p>
               <div class="card__meta">React · Node.js · Python (básico)</div>
@@ -150,7 +249,7 @@
     </section>
 
     <!-- TECNOLOGÍAS -->
-    <section id="tecnologias" class="section container">
+    <section id="tecnologias" class="section container reveal">
       <div class="section__head">
         <h2>Tecnologías</h2>
         <p>Stack principal y herramientas con las que desarrollo proyectos web.</p>
@@ -171,72 +270,256 @@
       </div>
     </section>
 
+    <!-- EXPERIENCIA / FORMACIÓN -->
+    <section id="experiencia" class="section container reveal">
+      <div class="section__head">
+        <h2>Experiencia y formación</h2>
+        <p>Mi recorrido construyendo aplicaciones web y mi base académica.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline__item">
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__card">
+            <span class="timeline__tag">Formación</span>
+            <h3>ADSI — Análisis y Desarrollo de Sistemas de Información</h3>
+            <p>Formación técnica orientada al desarrollo de software y sistemas de información.</p>
+          </div>
+        </div>
+        <div class="timeline__item">
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__card">
+            <span class="timeline__tag">Proyectos</span>
+            <h3>Desarrollo de sistemas administrativos (CI4)</h3>
+            <p>Asoprovin, GIM y otros sistemas web con estructura MVC, módulos y UI responsive.</p>
+          </div>
+        </div>
+        <div class="timeline__item">
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__card">
+            <span class="timeline__tag">Backend / Frontend</span>
+            <h3>PHP nativo + Bootstrap 5 + JavaScript</h3>
+            <p>Creación de interfaces modernas, formularios y flujos de negocio completos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta">
+        <div class="cta__info">
+          <span class="cta__dot" aria-hidden="true"></span>
+          <div>
+            <h3>Disponible para trabajar</h3>
+            <p>Abierto a oportunidades como desarrollador web Full‑Stack.</p>
+          </div>
+        </div>
+        <a class="btn" href="#contacto">Contáctame</a>
+      </div>
+    </section>
+
     <!-- PROYECTOS -->
-    <section id="proyectos" class="section container">
+    <section id="proyectos" class="section container reveal">
       <div class="section__head">
         <h2>Proyectos</h2>
-        <p>Actualmente en entorno local. Puedo publicarlos cuando se definan hosting y configuración.</p>
+        <p>Una muestra de mis proyectos: sistemas administrativos y aplicaciones. Los grandes se ejecutan en local; otros tienen su código en GitHub.</p>
       </div>
 
       <div class="projects">
-        <article class="project">
-          <div class="project__top">
-            <h3>Asoprovin — Sistema Web Administrativo</h3>
-            <span class="pill">CI4</span>
-          </div>
-          <p>Sistema orientado a administración y gestión de información.</p>
-          <ul class="list">
-            <li>Panel administrativo</li>
-            <li>Formularios y pantallas de gestión</li>
-            <li>UI responsive con Bootstrap 5</li>
-          </ul>
-          <div class="project__actions">
-            <a class="link" href="#contacto">Solicitar demo</a>
-            <span class="muted">Demo: Próximamente</span>
+        <article class="project reveal reveal--1">
+          <figure class="project__shot">
+            <!-- Reemplaza por tu captura: assets/proyectos/asoprovin.jpg -->
+            <img src="assets/proyectos/asoprovin.jpg" alt="Captura del sistema Asoprovin"
+                 onerror="this.classList.add('is-missing')" />
+            <span class="project__shot-fallback">Asoprovin</span>
+          </figure>
+          <div class="project__body">
+            <div class="project__top">
+              <h3>Asoprovin — Sistema Web Administrativo</h3>
+              <span class="pill">CI4</span>
+            </div>
+            <div class="project__stack">
+              <span class="tag">PHP</span>
+              <span class="tag">CodeIgniter 4</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Bootstrap 5</span>
+            </div>
+            <p>Sistema orientado a administración y gestión de información.</p>
+            <ul class="list">
+              <li>Panel administrativo</li>
+              <li>Formularios y pantallas de gestión</li>
+              <li>UI responsive con Bootstrap 5</li>
+            </ul>
+            <div class="project__actions">
+              <a class="link" href="#contacto">Solicitar demo</a>
+              <span class="muted">Demo: Próximamente</span>
+            </div>
           </div>
         </article>
 
-        <article class="project">
-          <div class="project__top">
-            <h3>GIM — Sistema de Gestión para Gimnasio</h3>
-            <span class="pill">PHP</span>
+        <article class="project reveal reveal--2">
+          <figure class="project__shot">
+            <!-- Reemplaza por tu captura: assets/proyectos/gim.jpg -->
+            <img src="assets/proyectos/gim.jpg" alt="Captura del sistema GIM"
+                 onerror="this.classList.add('is-missing')" />
+            <span class="project__shot-fallback">GIM</span>
+          </figure>
+          <div class="project__body">
+            <div class="project__top">
+              <h3>GIM — Sistema de Gestión para Gimnasio</h3>
+              <span class="pill">PHP</span>
+            </div>
+            <div class="project__stack">
+              <span class="tag">PHP</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Bootstrap 5</span>
+            </div>
+            <p>Aplicación para control/registro y administración operativa.</p>
+            <ul class="list">
+              <li>Flujos de registro/administración</li>
+              <li>UI clara y adaptable</li>
+              <li>Base lista para escalar</li>
+            </ul>
+            <div class="project__actions">
+              <a class="link" href="#contacto">Solicitar demo</a>
+              <span class="muted">Demo: Próximamente</span>
+            </div>
           </div>
-          <p>Aplicación para control/registro y administración operativa.</p>
-          <ul class="list">
-            <li>Flujos de registro/administración</li>
-            <li>UI clara y adaptable</li>
-            <li>Base lista para escalar</li>
-          </ul>
-          <div class="project__actions">
-            <a class="link" href="#contacto">Solicitar demo</a>
-            <span class="muted">Demo: Próximamente</span>
+        </article>
+
+        <article class="project reveal reveal--3">
+          <figure class="project__shot">
+            <!-- Reemplaza por tu captura: assets/proyectos/tusintetica.jpg -->
+            <img src="assets/proyectos/tusintetica.jpg" alt="Captura de TuSintetica"
+                 onerror="this.classList.add('is-missing')" />
+            <span class="project__shot-fallback">TuSintética</span>
+          </figure>
+          <div class="project__body">
+            <div class="project__top">
+              <h3>TuSintética — Gestión de Cancha</h3>
+              <span class="pill">JS</span>
+            </div>
+            <div class="project__stack">
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+            </div>
+            <p>Programa para administrar una cancha sintética (reservas y operación).</p>
+            <ul class="list">
+              <li>Gestión de reservas</li>
+              <li>Control operativo</li>
+            </ul>
+            <div class="project__actions">
+              <a class="btn btn--small" href="https://github.com/yheisonlanza2002/TuSintetica" target="_blank" rel="noreferrer">Ver código</a>
+              <span class="muted">Repo público</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal reveal--4">
+          <figure class="project__shot">
+            <!-- Reemplaza por tu captura: assets/proyectos/tienda-zapatillas.jpg -->
+            <img src="assets/proyectos/tienda-zapatillas.jpg" alt="Captura de tienda de zapatillas"
+                 onerror="this.classList.add('is-missing')" />
+            <span class="project__shot-fallback">Tienda</span>
+          </figure>
+          <div class="project__body">
+            <div class="project__top">
+              <h3>Tienda de Zapatillas</h3>
+              <span class="pill">JS</span>
+            </div>
+            <div class="project__stack">
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+            </div>
+            <p>Frente de tienda con catálogo y lógica de carrito en JavaScript.</p>
+            <ul class="list">
+              <li>Catálogo de productos</li>
+            </ul>
+            <div class="project__actions">
+              <a class="btn btn--small" href="https://github.com/yheisonlanza2002/tienda_zapatillas" target="_blank" rel="noreferrer">Ver código</a>
+              <span class="muted">Repo público</span>
+            </div>
           </div>
         </article>
       </div>
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="section container">
+    <section id="contacto" class="section container reveal">
       <div class="section__head">
         <h2>Contacto</h2>
-        <p>¿Tienes una oportunidad o un proyecto? Escríbeme y lo revisamos.</p>
+        <p>¿Tienes una oportunidad o un proyecto? Escríbeme y te respondo a la brevedad.</p>
       </div>
 
-      <div class="contact">
-        <a class="contact__item" href="mailto:yheisonlanza@gmail.com">
-          <span class="contact__label">Email</span>
-          <span class="contact__value">yheisonlanza@gmail.com</span>
-        </a>
+      <div class="contact__wrap">
+        <div class="contact__info">
+          <h3 class="contact__heading">Mis canales</h3>
 
-        <a class="contact__item" href="https://www.linkedin.com/in/yheison-lanza-235b60203?trk=contact-info" target="_blank" rel="noreferrer">
-          <span class="contact__label">LinkedIn</span>
-          <span class="contact__value">Ver perfil</span>
-        </a>
+          <a class="contact__item" href="assets/CV-Yheison-Lanza.pdf" download>
+            <span class="contact__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+            </span>
+            <span class="contact__labels">
+              <span class="contact__label">CV</span>
+              <span class="contact__value">Descargar hoja de vida</span>
+            </span>
+          </a>
 
-        <a class="contact__item" href="https://github.com/yheisonlanza2002" target="_blank" rel="noreferrer">
-          <span class="contact__label">GitHub</span>
-          <span class="contact__value">@yheisonlanza2002</span>
-        </a>
+          <a class="contact__item" href="mailto:yheisonlanza@gmail.com">
+            <span class="contact__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+            <span class="contact__labels">
+              <span class="contact__label">Email</span>
+              <span class="contact__value">yheisonlanza@gmail.com</span>
+            </span>
+          </a>
+
+          <a class="contact__item" href="https://www.linkedin.com/in/yheison-lanza-235b60203?trk=contact-info" target="_blank" rel="noreferrer">
+            <span class="contact__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452z"/></svg>
+            </span>
+            <span class="contact__labels">
+              <span class="contact__label">LinkedIn</span>
+              <span class="contact__value">Ver perfil</span>
+            </span>
+          </a>
+
+          <a class="contact__item" href="https://github.com/yheisonlanza2002" target="_blank" rel="noreferrer">
+            <span class="contact__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </span>
+            <span class="contact__labels">
+              <span class="contact__label">GitHub</span>
+              <span class="contact__value">@yheisonlanza2002</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="contact__form-box">
+          <h3 class="contact__heading">Envíame un mensaje</h3>
+          <p class="contact__hint">Cuéntame sobre tu proyecto u oportunidad. El mensaje llega directo a mi WhatsApp (no publico mi número).</p>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="contact-form__field">
+              <label for="cf-name">Nombre</label>
+              <input id="cf-name" name="name" type="text" required placeholder="Tu nombre" autocomplete="name" />
+            </div>
+
+            <div class="contact-form__field">
+              <label for="cf-email">Correo <span class="muted">(opcional)</span></label>
+              <input id="cf-email" name="email" type="email" placeholder="tucorreo@ejemplo.com" autocomplete="email" />
+            </div>
+
+            <div class="contact-form__field">
+              <label for="cf-msg">Mensaje</label>
+              <textarea id="cf-msg" name="message" rows="5" required placeholder="Cuéntame sobre tu proyecto..."></textarea>
+            </div>
+
+            <button class="btn contact-form__submit" type="submit">Enviar mensaje</button>
+            <p class="contact-form__status" id="contactFormStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
       </div>
 
       <footer class="footer">
@@ -288,6 +571,110 @@
         requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
+    })();
+  </script>
+
+  <script>
+    (function () {
+      // --- Menú móvil hamburguesa ---
+      const toggle = document.getElementById("navToggle");
+      const menu = document.getElementById("navMenu");
+      if (toggle && menu) {
+        toggle.addEventListener("click", () => {
+          const open = menu.classList.toggle("is-open");
+          toggle.classList.toggle("is-active", open);
+          toggle.setAttribute("aria-expanded", String(open));
+          toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+        });
+        menu.querySelectorAll("a").forEach((a) => {
+          a.addEventListener("click", () => {
+            menu.classList.remove("is-open");
+            toggle.classList.remove("is-active");
+            toggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      // --- Animaciones de aparición al hacer scroll (reveal) ---
+      const revealers = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window && revealers.length) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+        revealers.forEach((el) => io.observe(el));
+      } else {
+        revealers.forEach((el) => el.classList.add("is-visible"));
+      }
+
+      // --- Barra de progreso de scroll + botón volver arriba ---
+      const progressBar = document.getElementById("scrollProgress");
+      const backTop = document.getElementById("backTop");
+      if (progressBar) {
+        const bar = progressBar.querySelector("span");
+        function updateProgress() {
+          const st = document.documentElement.scrollTop || document.body.scrollTop;
+          const total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const pct = total > 0 ? (st / total) * 100 : 0;
+          bar.style.width = pct + "%";
+          if (backTop) {
+            const show = st > 240;
+            backTop.classList.toggle("is-visible", show);
+            backTop.setAttribute("aria-hidden", String(!show));
+          }
+        }
+        window.addEventListener("scroll", updateProgress, { passive: true });
+        window.addEventListener("resize", updateProgress);
+        updateProgress();
+      }
+      if (backTop) {
+        backTop.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      // --- Formulario de contacto (envía a WhatsApp, número oculto en pantalla) ---
+      const contactForm = document.getElementById("contactForm");
+      if (contactForm) {
+        const statusEl = document.getElementById("contactFormStatus");
+        // Número de WhatsApp en formato internacional sin "+"
+        const WA_NUMBER = "573202786727";
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const name = document.getElementById("cf-name").value.trim();
+          const email = document.getElementById("cf-email").value.trim();
+          const msg = document.getElementById("cf-msg").value.trim();
+
+          if (!name || !msg) {
+            if (statusEl) {
+              statusEl.textContent = "Completa tu nombre y el mensaje para poderte responder.";
+              statusEl.className = "contact-form__status is-error";
+            }
+            return;
+          }
+
+          let text = "Hola Yheison, soy " + name + ".";
+          if (email) text += "\nCorreo: " + email;
+          text += "\n\n" + msg;
+
+          const url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text);
+          window.open(url, "_blank", "noopener");
+
+          if (statusEl) {
+            statusEl.textContent = "Gracias " + name + ", tu mensaje se abrió en WhatsApp listo para enviar.";
+            statusEl.className = "contact-form__status is-ok";
+          }
+          contactForm.reset();
+        });
+      }
     })();
   </script>
 </body>
