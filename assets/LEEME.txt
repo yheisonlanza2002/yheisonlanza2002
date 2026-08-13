@@ -1,18 +1,26 @@
 Carpeta de recursos del portafolio
 ===================================
 
-Contenido:
+Sube aquí los siguientes archivos (puedes borrar este LEEME.txt cuando ya
+no lo necesites):
 
-1. HERO (fondo del encabezado)  ->  hero.jpg   (OPCIONAL)
+1. HERO (fondo del encabezado)  ->  hero.jpg
    - Imagen panorámica tipo "mano humana / mano robótica" o similar.
    - SI NO EXISTE: el sitio usa un patrón/gradiente dorado elegante como
      fallback, así que se sigue viendo bien igualmente.
 
-2. FOTO DE PERFIL  ->  foto.jpg   (YA INCLUIDA)
-   - Contiene el logo de LanzaTechDynamic como imagen de perfil.
+2. FOTO DE PERFIL  ->  foto.jpg
+   - Tu foto profesional, cuadrada (ej. 600x600 px o mayor).
+   - SI NO EXISTE: se muestran tus iniciales "YL" en un círculo con borde
+     dorado como fallback.
+
+3. CV  ->  CV-Yheison-Lanza.pdf
+   - Tu hoja de vida en PDF para el botón "Descargar CV" y la tarjeta "CV"
+     de la sección de contacto.
+   - Si no subes este PDF, el botón descargará un archivo inexistente (404).
 
 Consejo para GitHub Pages: no uses montos muy grandes; comprime las imágenes
-(JPG/WebP para el hero).
+(PNG/JPG para foto, JPG/WebP para el hero).
 
-Nota: no se sube hoja de vida (CV) por privacidad; por eso no hay botones
-de descarga de CV en el sitio.
+Para que se vean estos recursos, commitéalos y haz push, igual que el resto
+de los cambios del portafolio.

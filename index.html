@@ -46,6 +46,9 @@
     </nav>
 
     <div class="heroTop__media" role="img" aria-label="Imagen temática de tecnología">
+      <!-- Video de fondo local (assets/proyectos/hero.mp4) -->
+      <video class="heroTop__video" src="assets/proyectos/hero.mp4" loop autoplay muted playsinline preload="auto"
+             onerror="this.remove()" onplaying="this.classList.add('is-playing')" oncanplay="this.classList.add('is-playing')"></video>
       <div class="heroTop__pattern" aria-hidden="true"></div>
       <!-- Sube tu imagen a: assets/hero.jpg (si falta, se usa un patrón/gradiente elegante) -->
       <img class="heroTop__img" src="assets/hero.jpg" alt="Tecnología: mano humana y mano robótica" loading="eager"
