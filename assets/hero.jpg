@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0e27"/>
+      <stop offset="0.55" stop-color="#070b1e"/>
+      <stop offset="1" stop-color="#04060f"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.22" cy="0.35" r="0.55">
+      <stop offset="0" stop-color="#00d4ff" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.85" cy="0.72" r="0.5">
+      <stop offset="0" stop-color="#0066cc" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#0066cc" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00d4ff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#00d4ff" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#00d4ff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="1600" height="800" fill="url(#bg)"/>
+  <rect width="1600" height="800" fill="url(#glow1)"/>
+  <rect width="1600" height="800" fill="url(#glow2)"/>
+
+  <!-- Cuadrícula sutil -->
+  <g stroke="#00d4ff" stroke-opacity="0.06" stroke-width="1">
+    <line x1="0" y1="100" x2="1600" y2="100"/><line x1="0" y1="200" x2="1600" y2="200"/>
+    <line x1="0" y1="300" x2="1600" y2="300"/><line x1="0" y1="400" x2="1600" y2="400"/>
+    <line x1="0" y1="500" x2="1600" y2="500"/><line x1="0" y1="600" x2="1600" y2="600"/>
+    <line x1="0" y1="700" x2="1600" y2="700"/>
+    <line x1="200" y1="0" x2="200" y2="800"/><line x1="400" y1="0" x2="400" y2="800"/>
+    <line x1="600" y1="0" x2="600" y2="800"/><line x1="800" y1="0" x2="800" y2="800"/>
+    <line x1="1000" y1="0" x2="1000" y2="800"/><line x1="1200" y1="0" x2="1200" y2="800"/>
+    <line x1="1400" y1="0" x2="1400" y2="800"/>
+  </g>
+
+  <!-- Líneas de conexión de la red -->
+  <g stroke="#00d4ff" stroke-width="1.2" fill="none" opacity="0.35">
+    <path d="M280 200 L420 150 L560 240 L740 190 L900 300"/>
+    <path d="M1020 210 L1180 140 L1330 260 L1500 210"/>
+    <path d="M300 470 L460 400 L620 500 L800 430 L980 520"/>
+    <path d="M1100 480 L1260 560 L1440 470 L1560 540"/>
+    <path d="M200 620 L360 560 L520 660 L700 600 L880 680"/>
+  </g>
+
+  <!-- Nodos de la red -->
+  <g fill="#00d4ff">
+    <circle cx="280" cy="200" r="6"/><circle cx="420" cy="150" r="8"/><circle cx="560" cy="240" r="5"/>
+    <circle cx="740" cy="190" r="7"/><circle cx="900" cy="300" r="6"/><circle cx="1020" cy="210" r="5"/>
+    <circle cx="1180" cy="140" r="8"/><circle cx="1330" cy="260" r="6"/><circle cx="1500" cy="210" r="7"/>
+    <circle cx="300" cy="470" r="6"/><circle cx="460" cy="400" r="7"/><circle cx="620" cy="500" r="5"/>
+    <circle cx="800" cy="430" r="8"/><circle cx="980" cy="520" r="6"/><circle cx="1100" cy="480" r="5"/>
+    <circle cx="1260" cy="560" r="7"/><circle cx="1440" cy="470" r="6"/><circle cx="1560" cy="540" r="8"/>
+    <circle cx="200" cy="620" r="7"/><circle cx="360" cy="560" r="6"/><circle cx="520" cy="660" r="5"/>
+    <circle cx="700" cy="600" r="8"/><circle cx="880" cy="680" r="6"/>
+  </g>
+
+  <!-- Círculos orbitales con anillos -->
+  <g fill="none">
+    <circle cx="320" cy="320" r="90" stroke="#00d4ff" stroke-opacity="0.25" stroke-width="1.5"/>
+    <circle cx="320" cy="320" r="140" stroke="#00d4ff" stroke-opacity="0.14" stroke-width="1"/>
+    <circle cx="420" cy="320" r="180" stroke="#00d4ff" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="6 10"/>
+    <circle cx="1180" cy="330" r="110" stroke="#0066cc" stroke-opacity="0.3" stroke-width="1.5"/>
+    <circle cx="1180" cy="330" r="170" stroke="#0066cc" stroke-opacity="0.16" stroke-width="1"/>
+    <circle cx="1300" cy="330" r="210" stroke="#0066cc" stroke-opacity="0.09" stroke-width="1" stroke-dasharray="6 10"/>
+  </g>
+
+  <!-- Satélites en órbita -->
+  <g>
+    <circle cx="410" cy="232" r="7" fill="#00d4ff"/>
+    <circle cx="230" cy="320" r="6" fill="#00d4ff"/>
+    <circle cx="320" cy="458" r="5" fill="#00d4ff"/>
+    <circle cx="1290" cy="222" r="7" fill="#0066cc"/>
+    <circle cx="1070" cy="330" r="6" fill="#0066cc"/>
+    <circle cx="1180" cy="438" r="5" fill="#0066cc"/>
+  </g>
+
+  <!-- Barras de código estilo terminal (panel izquierdo) -->
+  <g transform="translate(110 520)" opacity="0.85">
+    <rect x="0" y="0" width="300" height="230" rx="12" fill="#070b1e" stroke="#00d4ff" stroke-opacity="0.4" stroke-width="1.2"/>
+    <g fill="#00d4ff" opacity="0.6">
+      <circle cx="20" cy="20" r="6"/><circle cx="42" cy="20" r="6"/><circle cx="64" cy="20" r="6"/>
+    </g>
+    <line x1="0" y1="38" x2="300" y2="38" stroke="#00d4ff" stroke-opacity="0.2"/>
+    <text x="20" y="68" font-family="Consolas, monospace" font-size="16" fill="#00d4ff">$ deploy --prod</text>
+    <text x="20" y="94" font-family="Consolas, monospace" font-size="16" fill="#ffffff" opacity="0.75">&gt; php spark serve</text>
+    <text x="20" y="120" font-family="Consolas, monospace" font-size="16" fill="#00d4ff">CodeIgniter 4 ⚡</text>
+    <text x="20" y="146" font-family="Consolas, monospace" font-size="16" fill="#ffffff" opacity="0.55">&gt; npm run build</text>
+    <text x="20" y="172" font-family="Consolas, monospace" font-size="16" fill="#00d4ff">✓ listo en 1.2s</text>
+    <text x="20" y="205" font-family="Consolas, monospace" font-size="16" fill="#ffffff" opacity="0.4">▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌</text>
+  </g>
+
+  <!-- Panel de datos derecho -->
+  <g transform="translate(1190 520)" opacity="0.85">
+    <rect x="0" y="0" width="320" height="150" rx="12" fill="#070b1e" stroke="#0066cc" stroke-opacity="0.5" stroke-width="1.2"/>
+    <text x="18" y="32" font-family="Consolas, monospace" font-size="15" fill="#0066cc">// dashboard</text>
+    <text x="18" y="60" font-family="Consolas, monospace" font-size="15" fill="#ffffff" opacity="0.75">ventas:  <tspan fill="#00d4ff">56</tspan></text>
+    <text x="18" y="86" font-family="Consolas, monospace" font-size="15" fill="#ffffff" opacity="0.75">clientes: <tspan fill="#00d4ff">128</tspan></text>
+    <text x="18" y="112" font-family="Consolas, monospace" font-size="15" fill="#ffffff" opacity="0.75">uptime:   <tspan fill="#00d4ff">99.98%</tspan></text>
+    <text x="18" y="138" font-family="Consolas, monospace" font-size="15" fill="#00d4ff">status: OK</text>
+  </g>
+
+  <!-- Brillo horizontal central sutil -->
+  <rect y="395" width="1600" height="10" fill="url(#line)" opacity="0.5" filter="url(#blur)"/>
+</svg>

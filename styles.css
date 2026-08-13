@@ -219,8 +219,8 @@ body{
   position:absolute;
   inset: 0;
   background:
-    radial-gradient(1200px 700px at 20% 0%, rgba(214,178,94,0.14), transparent 60%),
-    linear-gradient(180deg, rgba(7,7,10,0.70), rgba(7,7,10,0.92));
+    radial-gradient(1200px 700px at 20% 0%, rgba(214,178,94,0.12), transparent 60%),
+    linear-gradient(180deg, rgba(7,7,10,0.55), rgba(7,7,10,0.80));
 }
 .heroTop__img{
   position:absolute;
@@ -228,8 +228,8 @@ body{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: .55;
-  filter: contrast(1.05) saturate(1.03);
+  opacity: .85;
+  filter: contrast(1.06) saturate(1.1);
 }
 /* Fallback: patrón decorativo cuando no hay imagen (assets/hero.jpg) */
 .heroTop__pattern{
@@ -251,8 +251,8 @@ body{
   position:absolute;
   inset: 0;
   background:
-    radial-gradient(1000px 600px at 65% 10%, rgba(214,178,94,0.16), transparent 55%),
-    linear-gradient(180deg, rgba(7,7,10,0.45), rgba(7,7,10,0.95));
+    radial-gradient(1000px 600px at 65% 10%, rgba(0,212,255,0.10), transparent 55%),
+    linear-gradient(180deg, rgba(7,7,10,0.35), rgba(6,8,18,0.85));
 }
 .heroTop__content{
   display: flex;
